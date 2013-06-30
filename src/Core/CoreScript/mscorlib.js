@@ -43,6 +43,8 @@
 
 #include "TypeSystem\Type.js"
 
+#include "BCL\Assembly.js"
+    
 #include "BCL\Delegate.js"
 
 #include "BCL\CultureInfo.js"
@@ -68,4 +70,5 @@
 #include "BCL\Task.js"
 
 #include "BCL\App.js"
+    
 })(this);

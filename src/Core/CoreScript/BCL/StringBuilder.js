@@ -31,4 +31,4 @@ ss.StringBuilder.prototype = {
     }
 };
 
-ss.StringBuilder.registerClass('StringBuilder');
+ss.StringBuilder.registerClass('mscorlib', 'StringBuilder');

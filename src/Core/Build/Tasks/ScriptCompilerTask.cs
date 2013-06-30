@@ -276,6 +276,7 @@ namespace ScriptSharp.Tasks {
             string scriptFilePath = GetScriptFilePath(name, locale, debug, includeTests);
             outputScriptItem = new TaskItem(scriptFilePath);
             options.ScriptFile = new TaskItemOutputStreamSource(outputScriptItem);
+            options.AssemblyName = Path.GetFileNameWithoutExtension(scriptFilePath);
 
             return options;
         }

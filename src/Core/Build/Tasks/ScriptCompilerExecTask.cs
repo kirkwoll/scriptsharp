@@ -187,7 +187,13 @@ namespace ScriptSharp.Tasks {
             }
 
             ITaskItem scriptTaskItem = new TaskItem(OutputPath);
+
+            string projectName = (_projectPath != null) ? Path.GetFileNameWithoutExtension(_projectPath) : String.Empty;
+            string scriptFileName = Path.GetFileName(scriptTaskItem.ItemSpec);
+            string scriptPath = Path.GetFullPath(scriptTaskItem.ItemSpec);
+
             options.ScriptFile = new TaskItemOutputStreamSource(scriptTaskItem);
+            options.AssemblyName = Path.GetFileNameWithoutExtension(scriptTaskItem.ItemSpec);
 
             string errorMessage = String.Empty;
             if (options.Validate(out errorMessage) == false) {
@@ -199,10 +205,6 @@ namespace ScriptSharp.Tasks {
             compiler.Compile(options);
             if (_hasErrors == false) {
                 _script = scriptTaskItem;
-
-                string projectName = (_projectPath != null) ? Path.GetFileNameWithoutExtension(_projectPath) : String.Empty;
-                string scriptFileName = Path.GetFileName(scriptTaskItem.ItemSpec);
-                string scriptPath = Path.GetFullPath(scriptTaskItem.ItemSpec);
 
                 Log.LogMessage(MessageImportance.High, "{0} -> {1} ({2})", projectName, scriptFileName, scriptPath);
             }

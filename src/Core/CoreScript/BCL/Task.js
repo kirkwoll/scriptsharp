@@ -141,5 +141,5 @@ ss.Deferred.prototype = {
   }
 };
 
-ss.Deferred.registerClass('Deferred');
-ss.Task.registerClass('Task');
+ss.Deferred.registerClass('mscorlib', 'Deferred');
+ss.Task.registerClass('mscorlib', 'Task');

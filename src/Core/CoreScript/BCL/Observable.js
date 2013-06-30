@@ -56,7 +56,7 @@ ss.Observable._invalidateObservers = function (observers) {
   }
 }
 
-ss.Observable.registerClass('Observable');
+ss.Observable.registerClass('mscorlib', 'Observable');
 
 
 ss.ObservableCollection = function (items) {
@@ -121,4 +121,4 @@ ss.ObservableCollection.prototype = {
     }
   }
 }
-ss.ObservableCollection.registerClass('ObservableCollection', null, ss.IEnumerable);
+ss.ObservableCollection.registerClass('mscorlib', 'ObservableCollection', null, ss.IEnumerable);

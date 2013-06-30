@@ -6,6 +6,7 @@ Type.__typeName = 'Type';
 
 var __namespaces = {};
 var __rootNamespaces = [];
+var __assemblies = {};
 
 function ns(name) {
     this.__typeName = name;
@@ -15,6 +16,14 @@ ns.prototype = {
     getName: function() {
         return this.__typeName;
     }
+}
+
+Type.registerAssembly = function#? DEBUG Type$registerAssembly##(name) {
+    if (__assemblies[name]) {
+        return;
+    }
+                                                                           
+    __assemblies[name] = new ss.Assembly(name);
 }
 
 Type.registerNamespace = function#? DEBUG Type$registerNamespace##(name) {
@@ -40,7 +49,10 @@ Type.registerNamespace = function#? DEBUG Type$registerNamespace##(name) {
     __namespaces[name] = nsi;
 }
 
-Type.prototype.registerClass = function#? DEBUG Type$registerClass##(name, baseType, interfaceType) {
+Type.prototype.registerClass = function#? DEBUG Type$registerClass##(assemblyName, name, baseType, interfaceType) {
+    Type.registerAssembly(assemblyName);
+    this.__assembly = __assemblies[assemblyName];                                                                                                                  
+    this.__assembly._types.push(this);
     this.prototype.constructor = this;
     this.__typeName = name;
     this.__class = true;
@@ -137,6 +149,10 @@ Type.prototype.get_name = function#? DEBUG Type$get_name##() {
         return fullName.substr(nsIndex + 1);
     }
     return fullName;
+}
+
+Type.prototype.get_assembly = function#? DEBUG Type$get_assembly##() {
+    return this.__assembly;
 }
 
 Type.prototype.isInstanceOfType = function#? DEBUG Type$isInstanceOfType##(instance) {

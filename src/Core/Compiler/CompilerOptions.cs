@@ -27,6 +27,7 @@ namespace ScriptSharp {
         private bool _debugFlavor;
         private bool _includeTests;
         private bool _minimize;
+        private string _assemblyName;
 
         private string _testsSubnamespace;
 
@@ -41,6 +42,15 @@ namespace ScriptSharp {
 
         public CompilerOptions() {
             _testsSubnamespace = ".Tests";
+        }
+
+        public string AssemblyName {
+            get {
+                return _assemblyName;
+            }
+            set {
+                _assemblyName = value;
+            }
         }
 
         public bool DebugFlavor {

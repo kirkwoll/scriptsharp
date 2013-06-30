@@ -18,4 +18,4 @@ ss.ArrayEnumerator.prototype = {
     }
 }
 
-ss.ArrayEnumerator.registerClass('ArrayEnumerator', null, ss.IEnumerator);
+ss.ArrayEnumerator.registerClass('mscorlib', 'ArrayEnumerator', null, ss.IEnumerator);

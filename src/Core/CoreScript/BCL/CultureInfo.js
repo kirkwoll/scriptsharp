@@ -6,7 +6,7 @@ ss.CultureInfo = function#? DEBUG CultureInfo$##(name, numberFormat, dateFormat)
     this.numberFormat = numberFormat;
     this.dateFormat = dateFormat;
 }
-ss.CultureInfo.registerClass('CultureInfo');
+ss.CultureInfo.registerClass('mscorlib', 'CultureInfo');
 
 ss.CultureInfo.InvariantCulture = new ss.CultureInfo('en-US',
     {

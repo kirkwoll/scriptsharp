@@ -3,7 +3,7 @@
 
 ss.Delegate = function#? DEBUG Delegate$##() {
 }
-ss.Delegate.registerClass('Delegate');
+ss.Delegate.registerClass('mscorlib', 'Delegate');
 
 ss.Delegate.empty = function() { }
 

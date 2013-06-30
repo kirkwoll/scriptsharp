@@ -8,4 +8,4 @@ ss.Tuple = function (first, second, third) {
     this.third = third;
   }
 }
-ss.Tuple.registerClass('Tuple');
+ss.Tuple.registerClass('mscorlib', 'Tuple');

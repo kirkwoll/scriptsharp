@@ -5,6 +5,7 @@
 
 using System.Collections;
 using System.ComponentModel;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace System {
@@ -29,6 +30,12 @@ namespace System {
         }
 
         public string Name {
+            get {
+                return null;
+            }
+        }
+
+        public Assembly Assembly {
             get {
                 return null;
             }

@@ -351,6 +351,8 @@ namespace ScriptSharp.Generator {
 
             writer.Write(name);
             writer.Write(".registerClass('");
+            writer.Write(generator.Options.AssemblyName);
+            writer.Write("', '");
             writer.Write(name);
             writer.Write("'");
 
