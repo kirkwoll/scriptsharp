@@ -45,6 +45,8 @@
 
 #include "BCL\Assembly.js"
     
+#include "BCL\Activator.js"
+    
 #include "BCL\Delegate.js"
 
 #include "BCL\CultureInfo.js"
